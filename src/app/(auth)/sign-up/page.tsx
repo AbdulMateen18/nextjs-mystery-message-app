@@ -75,7 +75,7 @@ const page = () => {
   const onSubmit = async (data: z.infer<typeof signUpSchema>) => {
     setIsSubmitting(true);
     try {
-      const response = await axios.post<ApiResponse>("/api/auth/sign-up", data);
+      const response = await axios.post<ApiResponse>("/api/sign-up", data);
       toast.success(response.data.message);
 
       router.replace(`/verify/${username}`);
