@@ -75,10 +75,13 @@ export async function GET(request: Request) {
     );
   }
   const userId = user._id;
+  // console.log("Fetching message acceptance status for user ID:", userId);
 
   try {
     const existingUser = await UserModel.findById(userId);
+    // console.log("Existing user data:", existingUser);
     if (!existingUser) {
+      // console.error("User not found with ID:", userId);
       return Response.json(
         {
           success: false,

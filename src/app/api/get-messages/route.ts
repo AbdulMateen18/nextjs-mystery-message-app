@@ -29,6 +29,8 @@ export async function GET() {
       { $group: { _id: "$_id", messages: { $push: "$messages" } } },
     ]);
 
+    console.log("Retrieved messages for user ID:", userId, userData);
+
     if (!userData || userData.length === 0) {
       return Response.json(
         {
