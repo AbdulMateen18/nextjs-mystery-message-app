@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   await dbConnect();
 
   const { content, username } = await request.json();
-
+  console.log("Received message for user:", username, "Content:", content);
   try {
     const user = await UserModel.findOneAndUpdate({ username });
     if (!user) {
