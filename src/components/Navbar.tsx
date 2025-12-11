@@ -2,7 +2,6 @@
 
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
-import React from "react";
 import { User } from "next-auth";
 import { Button } from "./ui/button";
 
@@ -21,7 +20,7 @@ const Navbar = () => {
             <span className="mr-4">Welcome, {user.username || user.email}</span>
             <Button
               onClick={() => signOut()}
-              className="w-full md:w-auto bg-slate-100 text-black"
+              className="w-full md:w-auto bg-slate-100 text-black cursor-pointer"
               variant="outline"
             >
               Logout
