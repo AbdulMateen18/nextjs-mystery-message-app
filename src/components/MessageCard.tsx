@@ -27,6 +27,7 @@ type MessageCardProps = {
 };
 
 export function MessageCard({ message, onMessageDelete }: MessageCardProps) {
+  console.log("Rendering MessageCard component with message:", message);
   const handleDeleteConfirm = async () => {
     try {
       const response = await axios.delete<ApiResponse>(
